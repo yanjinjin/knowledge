@@ -1,0 +1,20 @@
+$def with (result)
+
+	<div class="row">
+		<div class="col-lg-12">
+		<form class="form-search" id="myform" method="post" action="index">
+			<input class="input-medium search-query" type="text" id= "product_name" name="product_name" aria-describedby="basic-addon" maxlength="128" required/> 
+			<button type="submit" class="btn btn-default" name="btn" value="check"><span class="glyphicon glyphicon-search">查找</span></button>
+		</form>
+		<p></p>
+		<div class="carousel slide" id="carousel-55268">
+			<div class="carousel-inner">
+				<div class="item active">
+			        $for i in result:	
+				    <p><a href="/detail?product_id=$i[0]">$i[1]</a></p><p>$i[2]</p>
+				    <hr size=10>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>

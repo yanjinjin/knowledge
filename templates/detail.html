@@ -1,0 +1,28 @@
+$def with (result)
+<link href="static/css/video-js.css" rel="stylesheet">
+<script src="static/js/videojs-ie8.min.js"></script>
+<script src="static/js/video.min.js"></script>
+<div class="row">
+                <div class="col-lg-12">
+                $for i in result:
+		    <video id="example_video_1" class="video-js vjs-default-skin" controls width="640" height="264"> 
+		    <source src="$i[3]" type="video/mp4">
+		    </video>
+		    <table>
+       		    <tr>
+            		<th><label for="name">标题:$i[0]</label></th>
+            	    </tr>
+        	    <tr>
+            		<th><label for="detail">描述:$i[1]</label></th>
+        	    </tr>
+		     <tr>
+                        <th><label for="detail">上传用户:$i[2]</label></th>
+                    </tr>
+		    <tr>
+                        <th><label for="detail">上传时间:$i[4]</label></th>
+                    </tr>
+        	    </table>
+
+                </div>
+</div>
+

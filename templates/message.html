@@ -1,0 +1,24 @@
+$def with (message)
+<div class="row">
+    <div class="col-lg-12">
+        <p><br><br></p>
+        $if message=="loginerr":
+	    <p>登录失败，请检查用户、密码，<a href="/login">重新登录</a></p>
+	$elif message=="checkerr":
+	   <p>查询不到结果</p>
+	$elif message=="registererr":
+	   <p>注册失败</p>
+   	$elif message=="registererr-passwd":
+           <p>注册失败，两次密码输入不一致，<a href="/register">重新注册</a></p>
+	$elif message=="registererr-verify":
+           <p>注册失败，校验码输入错误，<a href="/register">重新注册</a></p>
+	$elif message=="registererr-username":
+           <p>注册失败，用户名已经注册过，<a href="/register">重新注册</a></p>
+	$elif message=="registerok":
+           <p>注册成功，点击<a href="/login">登录</a></p>
+	$elif message=="uploaderr":
+           <p>上传失败</p>
+	$elif message=="uploadok":
+           <p>上传成功</p>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+$def with (web_log_content,spider_log_content,user,product,count)
+<div class="row">        
+    <div class="col-lg-12"> 
+			<p>系统用户：$count[0]个</p>
+			<table class="table table-bordered table-hover table-condensed">
+				<thead>
+					<tr>
+						<th>
+							编号
+						</th>
+						<th>
+							用户名
+						</th>
+						<th>
+							日期
+						</th>
+					</tr>
+				</thead>
+				<tbody>						    
+					$for i in user
+						<tr>
+							<td>
+								$i[0]
+							</td>
+							<td>
+								$i[1]									
+							</td>
+							<td>
+								$i[2][:19]
+							</td>
+						</tr>
+				   
+				</tbody>
+			</table>
+	</div>
+</div>
+<hr size=10>
+<div class="row">
+    <div class="col-lg-12">
+    <p>所有商品：$count[1]</p>
+    $for i in product:
+        <p><a href="/detail?product_id=$i[0]&product_name=$i[1]&url=$i[2]">$i[1]</a></p>
+        <hr size=10>
+    </div>
+</div>
+<hr size=10>
+<div class="row">
+    <div class="col-lg-12">
+    <p>web日志：</p>
+    $for i in web_log_content
+        <p>$i</p>
+    </div>
+</div>
+<hr size=10>
+<div class="row">
+    <div class="col-lg-12">
+    <p>spider日志：</p>
+    $for i in spider_log_content
+        <p>$i</p>
+    </div>
+</div>
